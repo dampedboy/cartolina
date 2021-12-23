@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Great+Vibes&family=Island+Moments&family=Pacifico&family=Pushster&family=Twinkle+Star&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="imageGoesHere">
+    <div class="top">
+      <h1 id=topText>TOP TEXT</h1>
+    </div>
+    <div class="middle">
+
+    </div>
+    <div class="bottom">
+      <h1 id=bottomText>BOTTOM TEXT</h1>
+    </div>
+
+
+  </div>
+  <script>
+    let text = '{"auguri":[' +
+    '{"topText":"Questo Natale non lo dimenticheremo facilmente...","bottomText":"Tu mando un abbraccio forte!" },' +
+    '{"topText":"Un pensiero e un abbraccio ai tempi del Coronavairus","bottomText":"Auguri di un sereno Natale" },' +
+    '{"topText":"Nel 1937, i coloni italiani in Etiopia, per vendicare un attentato al maresciallo Graziani, sterminarono indiscrimanatamente civili etiopi",  "bottomText":"Un conteggio ufficiale non è mai stato effettuato, ma si stimano tra le 1400 e le 30000 vittime." },' +
+    '{"topText":"TOP TEXT","bottomText":"BOTTOM TEXT"},'+
+    '{"topText":"TOP TEXT","bottomText":"BOTTOM TEXT"},'+
+    '{"topText":"TOP TEXT","bottomText":"BOTTOM TEXT"},'+
+    '{"topText":"TOP TEXT","bottomText":"BOTTOM TEXT"},'+
+    '{"topText":"TOP TEXT","bottomText":"BOTTOM TEXT"},'+
+    '{"topText":"Ce l\'hai la certificazione per farmi gli auguri?","bottomText":"Buon Natale!" }]}';
+
+    const obj = JSON.parse(text);
+    let y = Math.floor(Math.random() * 8) ;
+    document.getElementById("topText").innerHTML = obj.auguri[y].topText ;
+    document.getElementById("bottomText").innerHTML = obj.auguri[y].bottomText;
+
+    let x = Math.floor(Math.random() * 6) + 1;
+    let xImage = "url(./images/"+x+".jpeg)";
+    document.getElementsByClassName("imageGoesHere")[0].style.backgroundImage = xImage;
+
+    //fonts
+    const myArray = ["Caveat", "Dancing Script", "Great Vibes","Island Moments","Pacifico","Great Vibes","Pushster","Twinkle Star"];
+    let font ="font-family:"+ myArray[Math.floor(Math.random() * 3) ]+";";
+    document.getElementById("topText").setAttribute("style",font);
+    document.getElementById("bottomText").setAttribute("style",font);
+
+  </script>
+</body>

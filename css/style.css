@@ -1,0 +1,34 @@
+body{
+
+}
+
+.imageGoesHere{
+  width: 1200px;
+  height: 1200px;
+  background-position: center center;
+  background-size: cover;
+  /* background-image: url('./images/1.jpeg'); */
+  object-fit: cover;
+  z-index: -1;
+}
+
+div{
+  display: block;
+}
+
+#topText,#bottomText{
+  padding: 15px 20px;
+  font-size: 72px;
+  height: inherit;
+  z-index: 1;
+  text-shadow:
+     -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000
+}
+
+
+.middle{
+  height: 800px;
+}
